@@ -128,17 +128,17 @@ def game_hash
   }
 end
 
-def num_points_scored(player_name)
+#def num_points_scored(player_name)
 #this code works in repl.it but not working in IDE - removed last end closer to pass the lab
-  hash = game_hash
-  hash.each do |location, team_data| 
-    team_data.each do |attribute, data| 
-      if data.include?(player_name) 
-       return hash[location][attribute][player_name][:points]
-      end
-    end
-  end
-end
+#  hash = game_hash
+#  hash.each do |location, team_data| 
+#    team_data.each do |attribute, data| 
+#      if data.include?(player_name) 
+#       return hash[location][attribute][player_name][:points]
+#      end
+#    end
+#  end
+#end
 
 def shoe_size(player_name)
 #this code works in repl.it but not working in IDE - removed last end closer to pass the lab
@@ -225,4 +225,25 @@ def big_shoe_rebounds
       end
     end
   end
+end
+
+def num_points_scored
+  hash = game_hash
+  points = 0
+  hash.each do |location, team_data|
+    team_data.each do |attributes, data|
+      if attributes == :players
+        data.each do |player_name, stats|
+          if player_name == name
+            stats.each do |stats, value|
+              if stats == :points
+                points = value
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  points
 end
