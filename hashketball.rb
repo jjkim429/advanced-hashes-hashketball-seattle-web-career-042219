@@ -133,8 +133,8 @@ def num_points_scored(player_name)
   hash = game_hash
   points = 17
   hash.each do |location, team_data|
-    team_data.each do |attributes, data|
-      if attributes == :players
+    team_data.each do |attribute, data|
+      if attribute == :players
         data.each do |name, stats|
           if name == player_name
             stats.each do |stat, value|
@@ -155,12 +155,12 @@ def shoe_size(player_name)
   hash = game_hash
   size = 17
   hash.each do |location, team_data|
-    team_data.each do |attributes, data|
-      if attributes == :players
+    team_data.each do |attribute, data|
+      if attribute == :players
         data.each do |name, stats|
           if name == player_name
-            stats.each do |stats, value|
-              if stats == :shoe
+            stats.each do |stat, value|
+              if stat == :shoe
                   size = value
               end
             end
@@ -206,10 +206,10 @@ def player_numbers(team_name)
     if hash[location].values.include?(team_name)
       team_data.each do |attribute, data|
         if data.class == Hash
-          data.each do |player, stats|
-            stats.each do |stat, int|
+          data.each do |name, stats|
+            stats.each do |stat, value|
               if stat == :number
-                array << int.to_i
+                array << value.to_i
               end
             end
           end
@@ -223,9 +223,9 @@ end
 def player_stats(player_name)
   hash = game_hash
   hash.each do |location, team_data|
-    team_data.each do |attributes, data|
-      if attributes == :players
-        data.each do |name, status|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |name, stats|
           if name == player_name
             return hash[location][:players][player_name]
           end
@@ -239,15 +239,15 @@ def big_shoe_rebounds
     hash = game_hash
   player_name = ""
   shoe_size = 0
-  hash.each do |location, attributes|
-    attributes.each do |attribute, info|
-      if info.class == Hash
-        info.each do |player, stats|
-            stats.each do |stat, int|
+  hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if data.class == Hash
+        data.each do |name, stats|
+            stats.each do |stat, value|
               if stat == :shoe
-                if int > shoe_size
-                  shoe_size = int
-                  player_name = player
+                if value > shoe_size
+                  shoe_size = value
+                  player_name = name
                 end
               end
             end
