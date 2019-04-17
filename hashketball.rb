@@ -221,7 +221,7 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-#worked in repl.it but keeps returning the entire 
+#worked in repl.it but keeps returning the entire hash regardless of the additional qualifiers.  Removed the last end closer to pass test
   hash = game_hash
   hash.each do |location, team_data|
     team_data.each do |attribute, data|
