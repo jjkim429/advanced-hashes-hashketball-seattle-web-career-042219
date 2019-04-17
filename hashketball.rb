@@ -227,16 +227,17 @@ def player_stats(player_name)
       if attribute == :players
         data.each do |name, stats|
           if name == player_name
-            return [:players][player_name]
+            stats_list = stats
           end
         end
       end
     end
   end
+  return hash[location][:players][player_name]
 end  
 
 def big_shoe_rebounds
-    hash = game_hash
+  hash = game_hash
   player_name = ""
   shoe_size = 0
   hash.each do |location, team_data|
