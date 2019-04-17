@@ -222,19 +222,18 @@ end
 
 def player_stats(player_name)
   hash = game_hash
-  stats_list = {}
   hash.each do |location, team_data|
     team_data.each do |attribute, data|
       if attribute == :players
         data.each do |name, stats|
           if name == player_name
-            stats_list = stats.to_a
+            stats.to_a
           end
         end
       end
     end
   end
-  return stats_list.to_h
+  return stats.to_h
 end  
 
 def big_shoe_rebounds
