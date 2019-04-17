@@ -234,7 +234,7 @@ def player_stats(player_name)
       end
     end
   end
-  return stats_list.to_hash
+  return stats_list.to_h
 end  
 
 def big_shoe_rebounds
