@@ -221,7 +221,7 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-#worked in Repl.it 
+#worked in repl.it but keeps returning the entire 
   hash = game_hash
   hash.each do |location, team_data|
     team_data.each do |attribute, data|
@@ -234,6 +234,7 @@ def player_stats(player_name)
       end
     end
   end
+  return hash[location][:players][player_name]
 end  
 
 def big_shoe_rebounds
