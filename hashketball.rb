@@ -233,7 +233,7 @@ def player_stats(player_name)
       end
     end
   end
-  return hash[location][:players][player_name]
+  return stats_list
 end  
 
 def big_shoe_rebounds
