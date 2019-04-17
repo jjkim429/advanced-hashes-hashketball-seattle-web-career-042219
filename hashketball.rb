@@ -229,7 +229,7 @@ end
 
 def num_points_scored(name)
   hash = game_hash
-  points = 0
+  points = nil
   hash.each do |location, team_data|
     team_data.each do |attributes, data|
       if attributes == :players
