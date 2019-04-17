@@ -12,7 +12,6 @@
 #end
 
 def game_hash
-  #passed
   hash = {
     :home => {
       :team_name => "Brooklyn Nets",
@@ -129,36 +128,12 @@ def game_hash
   }
 end
 
-def num_points_scored(player)
-  #failed
-  hash = game_hash
-  #hash.each do |location, team_data| 
-  #  team_data.each do |attribute, data| 
-  #    if data.include?(player_name)
-  #     return hash[location][attribute][player_name][:points]
-  #    end
-  #  end
-  #end
-#end
-  if hash[:home][:players].include?(player)
-   hash[:home][:players][player][:stats][:points]
-  elsif hash[:away][:players].include?(player)
-   hash[:away][:players][player][:stats][:points]
-  else
-   "No player found."
-  end
+def num_points_scored(name)
+  player = players.fetch(name)
+  player.fetch(:points)
 end
 
 def shoe_size(player_name)
-  #failed
-  hash = game_hash
-  hash.each do |location, team_data| 
-    team_data.each do |attribute, data| 
-      if data.include?(player_name)
-       return hash[location][attribute][player_name][:shoe]
-      end
-    end
-  end
 end
 
 def team_colors(team_name)
@@ -176,7 +151,6 @@ def team_colors(team_name)
 end
 
 def team_names
-  #passed
   hash = game_hash
   array = []
   hash.each do |location, team_data|
@@ -190,7 +164,6 @@ def team_names
 end
 
 def player_numbers(team_name)
-  #passed
   hash = game_hash
   array = []
   hash.each do |location, team_data|
@@ -212,18 +185,10 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-  #failed
-  hash = game_hash
-  hash.each do |team, team_hash|
-    team_hash[:players].each do |player, player_hash|
-      if player_hash[:name] == player_name
-        return player_hash
-      end
-    end
-  end
+  
+end
 
 def big_shoe_rebounds
-  #passed
     hash = game_hash
   player_name = ""
   shoe_size = 0
@@ -244,20 +209,4 @@ def big_shoe_rebounds
       end
     end
   end
-end
-
-def most_points_scored
-
-end
-
-def winning_team
-  
-end
-
-def player_with_longest_name
-  
-end
-
-def long_name_steals_a_ton?
-
 end
