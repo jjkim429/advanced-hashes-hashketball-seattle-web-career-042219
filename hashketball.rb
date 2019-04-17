@@ -221,8 +221,20 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-  find_the_player(player_name)
-end
+  hash = game_hash
+  hash.each do |location, team_data|
+    team_data.each do |attributes, data|
+      if attributes == :players
+        data.each do |name, status|
+          if name == player_name
+            stats.collect do |stats, value|
+            end
+          end
+        end
+      end
+    end
+  end
+end  
 
 def big_shoe_rebounds
     hash = game_hash
