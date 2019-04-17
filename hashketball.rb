@@ -128,6 +128,10 @@ def game_hash
   }
 end
 
+def find_the_player(name)
+  players.fetch(name)
+end
+
 def num_points_scored(name)
   player = players.fetch(name)
   player.fetch(:points)
