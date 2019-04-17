@@ -234,7 +234,6 @@ def player_stats(player_name)
       end
     end
   end
-  return hash[location][:players][player_name]
 end  
 
 def big_shoe_rebounds
