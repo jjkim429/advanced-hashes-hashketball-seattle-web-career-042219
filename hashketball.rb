@@ -237,6 +237,7 @@ def num_points_scored(name)
             stats.each do |stats, value|
               if stats == :points
                   points = value
+                  return points
               end
             end
           end
@@ -244,5 +245,4 @@ def num_points_scored(name)
       end
     end
   end
-  return points
 end
