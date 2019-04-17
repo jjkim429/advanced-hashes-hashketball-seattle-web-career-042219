@@ -140,7 +140,7 @@ def num_points_scored(player_name)
   end
 end
 
-def shoe_size(player_name)
+def shoe_size(name)
 #this code works in repl.it but not working in IDE - removed last end closer to pass the lab
 #  hash = game_hash
 #  hash.each do |location, team_data| 
