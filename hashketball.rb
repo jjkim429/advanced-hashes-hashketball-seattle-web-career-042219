@@ -227,7 +227,7 @@ def big_shoe_rebounds
   end
 end
 
-def num_points_scored
+def num_points_scored(name)
   hash = game_hash
   points = 0
   hash.each do |location, team_data|
