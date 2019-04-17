@@ -128,14 +128,14 @@ def game_hash
   }
 end
 
-def num_points_scored(name)
+def num_points_scored(player_name)
   hash = game_hash
   points = 17
   hash.each do |location, team_data|
     team_data.each do |attributes, data|
       if attributes == :players
-        data.each do |player_name, stats|
-          if player_name == name
+        data.each do |name, stats|
+          if name == player_name
             stats.each do |stats, value|
               if stats == :points
                   points = value
