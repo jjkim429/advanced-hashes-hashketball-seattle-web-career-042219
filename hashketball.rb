@@ -129,6 +129,7 @@ def game_hash
 end
 
 def num_points_scored(player_name)
+#had points = 0 but 
   hash = game_hash
   points = 17
   hash.each do |location, team_data|
