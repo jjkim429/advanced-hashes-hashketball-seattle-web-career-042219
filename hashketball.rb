@@ -128,12 +128,12 @@ def game_hash
   }
 end
 
-def num_points_scored(name)
+def num_points_scored(player_name)
   hash = game_hash
   hash.each do |location, team_data| 
     team_data.each do |attribute, data| 
-      if data.include?(name) 
-       return hash[location][attribute][name][:points]
+      if data.include?(player_name) 
+       return hash[location][attribute][player_name][:points]
       end
     end
   end
