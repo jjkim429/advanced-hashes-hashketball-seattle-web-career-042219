@@ -130,8 +130,8 @@ end
 
 def num_points_scored(name)
   hash = game_hash
-  player = hash[:players]
-  players.fetch(:points)
+  player = hash[:players].fetch(name)
+  player.fetch(:points)
 end
 
 def shoe_size(name)
