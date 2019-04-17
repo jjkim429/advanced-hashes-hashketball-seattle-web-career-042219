@@ -128,7 +128,7 @@ def game_hash
   }
 end
 
-def num_points_scored(player_name)
+def num_points_scored(name)
   answer = nil
 
   game_hash.each do |team, details_hash|
