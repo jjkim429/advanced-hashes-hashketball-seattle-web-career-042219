@@ -142,14 +142,25 @@ end
 
 def shoe_size(player_name)
 #this code works in repl.it but not working in IDE - removed last end closer to pass the lab
-  hash = game_hash
-  hash.each do |location, team_data| 
-    team_data.each do |attribute, data| 
-      if data.include?(player_name) 
-       return hash[location][attribute][player_name][:shoe]
-      end
+#  hash = game_hash
+#  hash.each do |location, team_data| 
+#    team_data.each do |attribute, data| 
+#      if data.include?(player_name) 
+#       return hash[location][attribute][player_name][:shoe]
+#      end
+#    end
+#  end
+#end
+
+game_hash.each do |team_position, team_data|
+  team_data[:players].each do |player_name, player_data|
+    if player_name == name
+      return player_data[:shoe]
+      elsif player_name =! name
+      return nil 
     end
   end
+end
 end
 
 def team_colors(team_name)
