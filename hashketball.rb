@@ -129,7 +129,6 @@ def game_hash
 end
 
 def num_points_scored(name)
-  answer = []
   game_hash.each do |team, details_hash|
     players_array = details_hash[:players]
       players_array.each do |player_details_hash|
@@ -138,7 +137,6 @@ def num_points_scored(name)
         end
       end
   end
-  answer
 end
 
 
