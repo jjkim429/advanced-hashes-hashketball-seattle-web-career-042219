@@ -228,13 +228,13 @@ def player_stats(player_name)
       if attribute == :players
         data.each do |name, stats|
           if name == player_name
-            stats_list = stats
+            stats_list = stats.to_a
           end
         end
       end
     end
   end
-  return stats_list
+  return stats_list.to_hash
 end  
 
 def big_shoe_rebounds
