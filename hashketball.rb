@@ -222,6 +222,7 @@ end
 
 def player_stats(player_name)
   hash = game_hash
+  stats_list = {}
   hash.each do |location, team_data|
     team_data.each do |attribute, data|
       if attribute == :players
