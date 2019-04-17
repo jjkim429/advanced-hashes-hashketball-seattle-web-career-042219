@@ -227,7 +227,7 @@ def player_stats(player_name)
       if attributes == :players
         data.each do |name, status|
           if name == player_name
-            return hash[location][:players][player_name]
+            return hash[location][attribute][player_name]
           end
         end
       end
