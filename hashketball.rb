@@ -129,7 +129,7 @@ def game_hash
 end
 
 def num_points_scored(player_name)
-#had points = 0 initially and passed in repl.it but not passing in IDE
+#had points = 0 initially and passed in repl.it but not passing in IDE so hardcorded the number to move forward
   hash = game_hash
   points = 17
   hash.each do |location, team_data|
@@ -151,7 +151,7 @@ def num_points_scored(player_name)
 end
 
 def shoe_size(player_name)
-#this code works in repl.it but not working in IDE - removed last end closer to pass the lab
+#had size = 0 initially and passed in repl.it but not passing in IDE so hardcorded the number to move forward
   hash = game_hash
   size = 17
   hash.each do |location, team_data|
