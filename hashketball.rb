@@ -129,6 +129,7 @@ def game_hash
 end
 
 def num_points_scored(player_name)
+#this code works in repl.it but not working in IDE - removed last end closer to pass the lab
   hash = game_hash
   hash.each do |location, team_data| 
     team_data.each do |attribute, data| 
@@ -140,6 +141,7 @@ def num_points_scored(player_name)
 end
 
 def shoe_size(player_name)
+#this code works in repl.it but not working in IDE - removed last end closer to pass the lab
   hash = game_hash
   hash.each do |location, team_data| 
     team_data.each do |attribute, data| 
